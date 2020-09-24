@@ -1,0 +1,22 @@
+.product-img img {
+    width: 100%;
+}
+
+.product-description {
+    margin-bottom: 1em;
+
+    &__title h3 {
+        font-size: 22px;
+    }
+}
+
+.product-description__consists {
+    font-size: 15px;
+    line-height: 22px;
+    font-weight: 400;
+    color: #747474;
+
+    & span {
+        font-size: 14px;
+    }
+}

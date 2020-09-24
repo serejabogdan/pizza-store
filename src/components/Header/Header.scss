@@ -1,0 +1,76 @@
+$light-orange: #fb8d00;
+
+/* header */
+.header{
+    background-color: $light-orange;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+    .header__row {
+        display: flex;
+    
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.logo-title {
+    display: flex;
+    align-items: center;
+}
+
+.logo-title img {
+    height: 80px;
+    margin-right: 20px;
+}
+
+/* menu */
+
+.menu ul {
+    list-style-type: none;
+
+    display: flex;
+    margin: 0;
+
+    & li {
+        margin: 0 10px;
+        border-radius: 0.3em;
+        border: 1px solid $light-orange;
+        transition: 0.3s;
+    }
+
+    & li:hover {
+        border: 1px solid white;
+    }
+
+    & li a {
+        display: block;
+        font-size: 1em;
+        line-height: 1.25em;
+        color: white;
+        text-decoration: none;
+        padding: 8px 16px;
+    }
+}
+
+.header__basket button {
+    background-color: white;
+    border-radius: 0.25em;
+    border: 1px solid white;
+    transition: 0.3s;
+    color: $light-orange;
+    padding: 8px 16px;
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    }
+}
+
+.active {
+    background-color: #fff;
+    color: $light-orange;
+    border-radius: 0.3em;
+}
+
+/* menu */
+/* header */
