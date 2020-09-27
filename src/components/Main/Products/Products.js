@@ -45,11 +45,14 @@ export default class Products extends Component {
             }
         ];
     }
+
+    productName = () => this.props.location.pathname.slice(1);
+    
     render() {
         return (
             <div className="products-list">
                 <div className="product-list__title title">
-                    <h2>Component title</h2>
+                    <h2>{this.productName()}</h2>
                 </div>
                 <div className="products">
                     {
