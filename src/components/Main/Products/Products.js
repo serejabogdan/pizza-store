@@ -1,53 +1,38 @@
-import React, {Component} from 'react';
-import {Product} from './Product/Product';
+import React, { Component } from 'react';
+import { Product } from './Product/Product';
+import { ProductsService } from "../../../services/products.service";
 
 import './Products.scss';
 
 export default class Products extends Component {
     constructor() {
         super();
-        this.products = [
-            {
-                imgUrl: 'https://chizpizza.com.ua/image/cache/catalog/478/4sira-478x478.jpg',
-                name: 'Четыре сыра',
-                description: 'Сырный соус, сыр дор блю, моцарелла,чедр, пармезан, итальянские травы.',
-                price: 99
-            },
-            {
-                imgUrl: 'https://chizpizza.com.ua/image/cache/catalog/478/4sira-478x478.jpg',
-                name: 'Четыре сыра',
-                description: 'Сырный соус, сыр дор блю, моцарелла,чедр, пармезан, итальянские травы.',
-                price: 99
-            },
-            {
-                imgUrl: 'https://chizpizza.com.ua/image/cache/catalog/478/4sira-478x478.jpg',
-                name: 'Четыре сыра',
-                description: 'Сырный соус, сыр дор блю, моцарелла,чедр, пармезан, итальянские травы.',
-                price: 99
-            },
-            {
-                imgUrl: 'https://chizpizza.com.ua/image/cache/catalog/478/4sira-478x478.jpg',
-                name: 'Четыре сыра',
-                description: 'Сырный соус, сыр дор блю, моцарелла,чедр, пармезан, итальянские травы.',
-                price: 99
-            },
-            {
-                imgUrl: 'https://chizpizza.com.ua/image/cache/catalog/478/4sira-478x478.jpg',
-                name: 'Четыре сыра',
-                description: 'Сырный соус, сыр дор блю, моцарелла,чедр, пармезан, итальянские травы.',
-                price: 99
-            },
-            {
-                imgUrl: 'https://chizpizza.com.ua/image/cache/catalog/478/4sira-478x478.jpg',
-                name: 'Четыре сыра',
-                description: 'Сырный соус, сыр дор блю, моцарелла,чедр, пармезан, итальянские травы.',
-                price: 99
-            }
-        ];
+        this.state = { products: [] };
+        const productsService = new ProductsService();
+        this.service = productsService.create('test');
     }
 
-    productName = () => this.props.location.pathname.slice(1);
-    
+    componentDidMount() {
+        const productName = this.getProductnameFromUrl();
+        const products = this.service.getArrayProducts(productName);
+        this.setState(state => ({...state, products}));
+    }
+
+    getProductnameFromUrl = () => this.props.location.pathname.slice(1);
+
+    productName() {
+        const products = {
+            pizzas: 'Пиццы',
+            salads: 'Салаты',
+            drinks: 'Напитки'
+        };
+        let productName = this.getProductnameFromUrl();
+        productName = products[productName];
+        return productName;
+    };
+
+    isProductsLength = () => this.state.products.length > 0 && this.state.products.map((product, index) => <Product product={product} key={index} />)
+
     render() {
         return (
             <div className="products-list">
@@ -55,12 +40,9 @@ export default class Products extends Component {
                     <h2>{this.productName()}</h2>
                 </div>
                 <div className="products">
-                    {
-                        this.products.length > 0 &&
-                            this.products.map((product, index) => <Product product={product} key={index}/>)
-                    }
+                    { this.isProductsLength() }
                 </div>
-           </div>
+            </div>
         );
     }
 }
