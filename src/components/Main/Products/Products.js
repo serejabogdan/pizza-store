@@ -8,16 +8,30 @@ export default class Products extends Component {
     constructor() {
         super();
         this.state = { products: [] };
-        this.productsService = new ProductsService();
+        const productsService = new ProductsService();
+        this.service = productsService.create('test');
     }
 
     componentDidMount() {
-        const productName = this.productName();
-        const products = this.productsService.getArrayProducts(productName);
+        const productName = this.getProductnameFromUrl();
+        const products = this.service.getArrayProducts(productName);
         this.setState(state => ({...state, products}));
     }
 
-    productName = () => this.props.location.pathname.slice(1);
+    getProductnameFromUrl = () => this.props.location.pathname.slice(1);
+
+    productName() {
+        const products = {
+            pizzas: 'Пиццы',
+            salads: 'Салаты',
+            drinks: 'Напитки'
+        };
+        let productName = this.getProductnameFromUrl();
+        productName = products[productName];
+        return productName;
+    };
+
+    isProductsLength = () => this.state.products.length > 0 && this.state.products.map((product, index) => <Product product={product} key={index} />)
 
     render() {
         return (
@@ -26,10 +40,7 @@ export default class Products extends Component {
                     <h2>{this.productName()}</h2>
                 </div>
                 <div className="products">
-                    {
-                        this.state.products.length > 0 &&
-                        this.state.products.map((product, index) => <Product product={product} key={index} />)
-                    }
+                    { this.isProductsLength() }
                 </div>
             </div>
         );
