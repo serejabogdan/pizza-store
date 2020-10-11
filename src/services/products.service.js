@@ -8,6 +8,7 @@ export class ProductsService {
     };
 
     create(serviceType) {
-        return new ProductsService.servicesList[serviceType];
+        const Service = ProductsService.servicesList[serviceType]
+        return new Service();
     }
 }

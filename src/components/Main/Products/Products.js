@@ -13,21 +13,25 @@ export default class Products extends Component {
     }
 
     componentDidMount() {
+        this.getProducts();
+    }
+
+    getProducts() {
         const productName = this.getProductnameFromUrl();
         const products = this.service.getArrayProducts(productName);
-        this.setState(state => ({...state, products}));
+        this.setState(state => ({ ...state, products }));
     }
 
     getProductnameFromUrl = () => this.props.location.pathname.slice(1);
 
     productName() {
-        const products = {
+        const productsName = {
             pizzas: 'Пиццы',
             salads: 'Салаты',
             drinks: 'Напитки'
         };
         let productName = this.getProductnameFromUrl();
-        productName = products[productName];
+        productName = productsName[productName];
         return productName;
     };
 
@@ -40,7 +44,7 @@ export default class Products extends Component {
                     <h2>{this.productName()}</h2>
                 </div>
                 <div className="products">
-                    { this.isProductsLength() }
+                    {this.isProductsLength()}
                 </div>
             </div>
         );
