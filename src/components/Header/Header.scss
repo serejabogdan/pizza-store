@@ -1,4 +1,5 @@
 $light-orange: #fb8d00;
+$current: #fff;
 
 /* header */
 .header{
@@ -39,23 +40,23 @@ $light-orange: #fb8d00;
     }
 
     & li:hover {
-        border: 1px solid white;
+        border: 1px solid $current;
     }
 
     & li a {
         display: block;
         font-size: 1em;
         line-height: 1.25em;
-        color: white;
+        color: $current;
         text-decoration: none;
         padding: 8px 16px;
     }
 }
 
 .header__basket button {
-    background-color: white;
+    background-color: $current;
     border-radius: 0.25em;
-    border: 1px solid white;
+    border: 1px solid $current;
     transition: 0.3s;
     color: $light-orange;
     padding: 8px 16px;
@@ -67,7 +68,7 @@ $light-orange: #fb8d00;
 }
 
 .active {
-    background-color: #fff;
+    background-color: $current;
     color: $light-orange;
     border-radius: 0.3em;
 }

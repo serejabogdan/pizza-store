@@ -1,7 +1,8 @@
 import React from 'react';
 import './Header.scss';
 import logoPizza from './images/pizza-128.png';
-import {NavLink, Link} from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 const Header = (props) => {
     return (
@@ -9,8 +10,8 @@ const Header = (props) => {
             <div className="container">
                 <div className="header__row">
                     <div className="logo-title">
-                        <img src={logoPizza} alt="logo"/>
-                        
+                        <img src={logoPizza} alt="logo" />
+
                         <div className="menu">
                             <div className="container">
                                 <ul>
@@ -23,11 +24,14 @@ const Header = (props) => {
                     </div>
 
                     <div className="header__basket">
-                        <Link to="/cart"><button>КОРЗИНА | {props.cartLength}</button></Link>
+                        <NavLink to="/cart"><button>КОРЗИНА | {props.cartLength}</button></NavLink>
                     </div>
                 </div>
             </div>
         </header>
     );
 };
-export default Header;
+
+const mapStateToProps = state => ({cartLength: state.cart.cartProducts.length});
+
+export default connect(mapStateToProps, null)(Header);
