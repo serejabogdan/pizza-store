@@ -1,8 +1,26 @@
 import React from 'react';
 import './Header.scss';
 import logoPizza from './images/pizza-128.png';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
+
+function createNavLinks() {
+    const navLinks = [
+        {
+            to: '/pizzas',
+            name: 'Пицца'
+        },
+        {
+            to: '/salads',
+            name: 'Салаты'
+        },
+        {
+            to: '/drinks',
+            name: 'Напитки'
+        }
+    ];
+    return navLinks.map(navLink => <li key={navLink.name}><NavLink to={navLink.to} activeClassName="active">{navLink.name}</NavLink></li>);
+}
 
 const Header = (props) => {
     return (
@@ -15,9 +33,7 @@ const Header = (props) => {
                         <div className="menu">
                             <div className="container">
                                 <ul>
-                                    <li><NavLink to="/pizzas" activeClassName="active">Пицца</NavLink></li>
-                                    <li><NavLink to="/salads" activeClassName="active">Салаты</NavLink></li>
-                                    <li><NavLink to="/drinks" activeClassName="active">Напитки</NavLink></li>
+                                    {createNavLinks()}
                                 </ul>
                             </div>
                         </div>

@@ -11,7 +11,7 @@ const Cart = (props) => {
                 <h2>Корзина</h2>
             </div>
             <div className="products">
-                {cartProducts.map((product, index) => <Product product={product} key={index} />)}
+                {cartProducts.map((product) => <Product isCart={true} product={product} key={product.name} />)}
             </div>
             <div className="total">
                 Общая сумма к оплате: {cartProducts.reduce((accumulate, current) => accumulate + current.price, 0)} грн.
