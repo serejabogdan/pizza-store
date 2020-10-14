@@ -12,30 +12,25 @@ class Select extends React.Component {
         this.props.deleteProduct(this.props.product);
     }
 
-    isDeleteBtn() {
-        if (this.props.isCart) {
-            return (
-                <div className="product-select__delete-btn">
-                    <button type="button" className="btn-delete btn-select" onClick={this.onDeleteProduct}>Удалить</button>
-                </div>
-            );
-        } else {
-            return (
-                <div className="product-select__select-btn">
-                    <button type="button" className="btn-select" onClick={this.onAddProduct}>Выбрать</button>
-                </div>
-            );
-        }
+    isCartButton() {
+        return this.props.isCart ?
+            <button type="button" className="btn-delete btn-select" onClick={this.onDeleteProduct}>Удалить</button> :
+            <button type="button" className="btn-select" onClick={this.onAddProduct}>Выбрать</button>;
     }
 
     render() {
-        console.log(this.props.isCart);
         return (
             <div className="product-select">
                 <div className="product-select__cost">
-                    <span>от {this.props.product.price} грн.</span>
+                    <span>
+                        {!this.props.isCart && 'от '}
+                        {this.props.product.price} грн.
+                    </span>
                 </div>
-                {this.isDeleteBtn()}
+                {this.props.isCart && <input type="text" className="product-select__pizza-amount" />}
+                <div className="product-select__select-btn">
+                    {this.isCartButton()}
+                </div>
             </div>
         );
     }
