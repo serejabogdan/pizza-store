@@ -8,7 +8,7 @@ export const Product = (props) => {
     return (
         <div className="products-product">
             <Info product={{ name, imgUrl, description }} />
-            <Select product={props.product} />
+            <Select isCart={props.isCart} product={props.product} />
         </div>
     );
 }
