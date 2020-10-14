@@ -1,4 +1,4 @@
-import { ADD_PRODUCT, DELETE_PRODUCT } from "./types";
+import { ADD_PRODUCT, CHANGE_AMOUNT_PRODUCT, DELETE_PRODUCT } from "./types";
 
 const initialState = {
     cartProducts: []
@@ -14,6 +14,14 @@ export const cartReducer = (state = initialState, action) => {
             return state;
         case DELETE_PRODUCT:
             return {...state, cartProducts: state.cartProducts.filter(product => product.name !== action.payload.name)};
+        case CHANGE_AMOUNT_PRODUCT:
+            return {...state, cartProducts: state.cartProducts.map(product => {
+                    if (product.name === action.payload.name) {
+                        product.amount = action.payload.amount;
+                    }
+                    return product;
+                })
+            };
         default: return state;
     }
 }

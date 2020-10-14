@@ -14,7 +14,7 @@ const Cart = (props) => {
                 {cartProducts.map((product) => <Product isCart={true} product={product} key={product.name} />)}
             </div>
             <div className="total">
-                Общая сумма к оплате: {cartProducts.reduce((accumulate, current) => accumulate + current.price, 0)} грн.
+                Общая сумма к оплате: {cartProducts.length && cartProducts.reduce((acc, current) => acc + current.price * current.amount, 0)} грн.
             </div>
         </div>
     );
