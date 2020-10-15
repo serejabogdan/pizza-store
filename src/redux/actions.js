@@ -15,7 +15,7 @@ export function deleteProduct(product) {
     };
 }
 
-export function changleProductAmount(product) {
+export function changeProductAmount(product) {
     return {
         type: CHANGE_AMOUNT_PRODUCT,
         payload: product

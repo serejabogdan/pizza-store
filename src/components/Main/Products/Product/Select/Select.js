@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addProduct, deleteProduct, changleProductAmount } from '../../../../../redux/actions';
+import { addProduct, deleteProduct, changeProductAmount } from '../../../../../redux/actions';
 import './Select.scss';
 
 class Select extends React.Component {
@@ -27,8 +27,8 @@ class Select extends React.Component {
 
     amountOfProduct(targetValue) {
         const isNumber = /[1-9]/g;
-        const amount = targetValue.match(isNumber) || [1];
-        return amount.join('');
+        const amount = targetValue.match(isNumber);
+        return amount;
     }
 
     onChangeProductAmount = (event) => {
@@ -50,7 +50,7 @@ class Select extends React.Component {
             amount
         };
         
-        this.props.changleProductAmount(product);
+        this.props.changeProductAmount(product);
     }
 
     render() {
@@ -79,7 +79,7 @@ class Select extends React.Component {
 const mapDispatchToProps = {
     addProduct: addProduct,
     deleteProduct: deleteProduct,
-    changleProductAmount: changleProductAmount
+    changeProductAmount: changeProductAmount
 };
 
 export default connect(null, mapDispatchToProps)(Select);
