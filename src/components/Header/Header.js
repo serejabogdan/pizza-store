@@ -1,6 +1,6 @@
 import React from 'react';
 import './Header.scss';
-import logoPizza from './images/pizza-128.png';
+import logoPizza from '../../assets/pizza-128.png';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 

@@ -27,8 +27,8 @@ class Select extends React.Component {
 
     amountOfProduct(targetValue) {
         const isNumber = /[1-9]/g;
-        const amount = targetValue.match(isNumber);
-        return amount;
+        const amount = targetValue.match(isNumber) || [''];
+        return amount.join('');
     }
 
     onChangeProductAmount = (event) => {
