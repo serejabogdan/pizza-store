@@ -2,7 +2,7 @@ import React from 'react';
 import './Main.scss';
 import Products from './Products/Products';
 import {Route, Switch, Redirect} from 'react-router-dom';
-import { Cart } from './Cart/Cart';
+import Cart from './Cart/Cart';
 
 function generateRoutes(paths) {
     return paths.map(path => (
