@@ -13,46 +13,6 @@ $x-color-white: #ffffff;
     align-items: center;
 }
 
-.list {
-    list-style-type: none;
-    font-size: 1rem;
-    line-height: 1.25rem;
-}
-
-.list__item {
-    margin: 0 0.7rem;
-}
-
-.header__list {
-    display: flex;
-}
-
-.link-theme {
-    padding: 0.6rem 1rem;
-    border: 1px solid $x-light-orange;
-    border-radius: 0.5rem;
-    
-    &:hover {
-        border: 1px solid $x-color-white;
-    }
-}
-
-.link {
-    text-decoration: none;
-    transition: 0.3s;
-    color: $x-color-white;
-}
-
-.link_active {
-    background-color: $x-color-white;
-    color: $x-light-orange;
-    border-radius: 0.5rem;
-
-    &:hover {
-        border: 1px solid $x-light-orange;
-    }
-}
-
 .logo {
     height: 5rem;
     margin-right: 1.2rem;
@@ -60,7 +20,6 @@ $x-color-white: #ffffff;
 
 .cart__link {
     background-color: $x-color-white;
-    border: 1px solid $x-color-white;
     color: $x-light-orange;
     cursor: pointer;
 

@@ -1,30 +1,9 @@
 import React from 'react';
-import './Header.scss';
 import logoPizza from '../../assets/pizza-128.png';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
-
-function createNavLinks() {
-    const navLinks = [
-        {
-            to: '/pizzas',
-            name: 'Пицца'
-        },
-        {
-            to: '/salads',
-            name: 'Салаты'
-        },
-        {
-            to: '/drinks',
-            name: 'Напитки'
-        }
-    ];
-    return navLinks.map(navLink =>
-        <li className="list__item" key={navLink.name}>
-            <NavLink to={navLink.to} className="list__link link link-theme" activeClassName="link_active">{navLink.name}</NavLink>
-        </li>
-    );
-}
+import { Menu } from './Menu/Menu';
+import './Header.scss';
 
 const Header = (props) => {
     return (
@@ -34,15 +13,9 @@ const Header = (props) => {
                     <div className="header__logo">
                         <img className="logo" src={logoPizza} alt="logo" />
                     </div>
-
-                    <nav className="header__menu">
-                        <ul className="header__list list list-theme">
-                            {createNavLinks()}
-                        </ul>
-                    </nav>
-
+                    <Menu />
                     <div className="header__cart">
-                        <NavLink to="/cart" activeClassName="link-active"><button className="cart__link link link-theme">КОРЗИНА | {props.cartLength}</button></NavLink>
+                        <NavLink to="/cart"><button className="cart__link link link-theme">КОРЗИНА | {props.cartLength}</button></NavLink>
                     </div>
                 </div>
             </div>
