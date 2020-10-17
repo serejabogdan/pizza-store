@@ -26,7 +26,7 @@ export default class Products extends Component {
 
     productName() {
         const productsName = {
-            pizzas: 'Пиццы',
+            pizzas: 'Пицца',
             salads: 'Салаты',
             drinks: 'Напитки'
         };

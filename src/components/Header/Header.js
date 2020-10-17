@@ -19,7 +19,11 @@ function createNavLinks() {
             name: 'Напитки'
         }
     ];
-    return navLinks.map(navLink => <li key={navLink.name}><NavLink to={navLink.to} activeClassName="active">{navLink.name}</NavLink></li>);
+    return navLinks.map(navLink =>
+        <li className="list__item" key={navLink.name}>
+            <NavLink to={navLink.to} className="header__link link link-theme" activeClassName="link_active">{navLink.name}</NavLink>
+        </li>
+    );
 }
 
 const Header = (props) => {
@@ -27,20 +31,18 @@ const Header = (props) => {
         <header className="header">
             <div className="container">
                 <div className="header__row">
-                    <div className="logo-title">
-                        <img src={logoPizza} alt="logo" />
-
-                        <div className="menu">
-                            <div className="container">
-                                <ul>
-                                    {createNavLinks()}
-                                </ul>
-                            </div>
-                        </div>
+                    <div className="header__logo">
+                        <img className="logo" src={logoPizza} alt="logo" />
                     </div>
 
-                    <div className="header__basket">
-                        <NavLink to="/cart"><button>КОРЗИНА | {props.cartLength}</button></NavLink>
+                    <nav className="header__menu">
+                        <ul className="header__list list list-theme">
+                            {createNavLinks()}
+                        </ul>
+                    </nav>
+
+                    <div className="header__cart">
+                        <NavLink to="/cart"><button className="cart cart__link cart-theme">КОРЗИНА | {props.cartLength}</button></NavLink>
                     </div>
                 </div>
             </div>
@@ -48,6 +50,6 @@ const Header = (props) => {
     );
 };
 
-const mapStateToProps = state => ({cartLength: state.cart.cartProducts.length});
+const mapStateToProps = state => ({ cartLength: state.cart.cartProducts.length });
 
 export default connect(mapStateToProps, null)(Header);
