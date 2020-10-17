@@ -21,7 +21,7 @@ function createNavLinks() {
     ];
     return navLinks.map(navLink =>
         <li className="list__item" key={navLink.name}>
-            <NavLink to={navLink.to} className="header__link link link-theme" activeClassName="link_active">{navLink.name}</NavLink>
+            <NavLink to={navLink.to} className="list__link link link-theme" activeClassName="link_active">{navLink.name}</NavLink>
         </li>
     );
 }
@@ -42,7 +42,7 @@ const Header = (props) => {
                     </nav>
 
                     <div className="header__cart">
-                        <NavLink to="/cart"><button className="cart cart__link cart-theme">КОРЗИНА | {props.cartLength}</button></NavLink>
+                        <NavLink to="/cart" activeClassName="link-active"><button className="cart__link link link-theme">КОРЗИНА | {props.cartLength}</button></NavLink>
                     </div>
                 </div>
             </div>

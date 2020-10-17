@@ -1,8 +1,8 @@
-$light-orange: #fb8d00;
-$x-color-white: #fff;
+$x-light-orange: #fb8d00;
+$x-color-white: #ffffff;
 
 .header{
-    background-color: $light-orange;
+    background-color: $x-light-orange;
     box-shadow: 0 0.1rem 0.5rem rgba(0,0,0,0.1);
 }
 
@@ -27,12 +27,9 @@ $x-color-white: #fff;
     display: flex;
 }
 
-.header__link {
-    padding: 0.7rem 1rem;
-}
-
 .link-theme {
-    border: 1px solid $light-orange;
+    padding: 0.6rem 1rem;
+    border: 1px solid $x-light-orange;
     border-radius: 0.5rem;
     
     &:hover {
@@ -48,11 +45,11 @@ $x-color-white: #fff;
 
 .link_active {
     background-color: $x-color-white;
-    color: $light-orange;
+    color: $x-light-orange;
     border-radius: 0.5rem;
 
     &:hover {
-        border: 1px solid $light-orange;
+        border: 1px solid $x-light-orange;
     }
 }
 
@@ -61,91 +58,13 @@ $x-color-white: #fff;
     margin-right: 1.2rem;
 }
 
-.cart {
-    transition: 0.3s;
+.cart__link {
     background-color: $x-color-white;
-    border-radius: 0.25rem;
     border: 1px solid $x-color-white;
-    color: $light-orange;
-    padding: 0.5rem 1rem;
+    color: $x-light-orange;
     cursor: pointer;
 
     &:hover {
-        box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+        box-shadow: 0 0.1rem 0.7rem rgba(0,0,0,0.15);
     }
 }
-
-/* header */
-/* .header{
-    background-color: $light-orange;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-
-    .header__row {
-        display: flex;
-    
-        justify-content: space-between;
-        align-items: center;
-    }
-}
-
-.logo-title {
-    display: flex;
-    align-items: center;
-}
-
-.logo-title img {
-    height: 80px;
-    margin-right: 20px;
-} */
-
-/* menu */
-/* 
-.header__menu ul {
-    list-style-type: none;
-
-    display: flex;
-    margin: 0;
-    font-size: 1rem;
-    line-height: 1.25rem;
-
-    & li {
-        margin: 0 0.7rem;
-        border-radius: 0.3rem;
-        border: 1px solid $light-orange;
-        transition: 0.3s;
-    }
-
-    & li:hover {
-        border: 1px solid $x-color-white;
-    }
-
-    & li a {
-        display: block;
-        text-decoration: none;
-        color: $x-color-white;
-        padding: 0.5rem 1rem;
-    }
-}
-
-.header__basket button {
-    background-color: $x-color-white;
-    border-radius: 0.25rem;
-    border: 1px solid $x-color-white;
-    transition: 0.3s;
-    color: $light-orange;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-
-    &:hover {
-        box-shadow: 0 3px 10px rgba(0,0,0,0.15);
-    }
-}
-
-.active {
-    background-color: $x-color-white;
-    color: $light-orange;
-    border-radius: 0.3em;
-} */
-
-/* menu */
-/* header */
