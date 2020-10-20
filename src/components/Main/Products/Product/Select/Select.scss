@@ -1,31 +1,36 @@
+$x-light-orange: #fb8d00;
+$x-color-white: #ffffff;
 
-.product-select {
+.Select {
     display: flex;
     align-items: center;
     justify-content: space-around;
 
-    &__pizza-amount {
+    &__amount {
         box-sizing: border-box;
-        & input {
-            width: 2rem;
-            padding: 0.2rem 0.4rem;
-            text-align: center;
-        }
     }
 }
 
-.btn-select {
-    margin: 0 10px;
-    border-radius: 10px;
-    border: 1px solid #fb8d00;
-    transition: 0.3s;
-    padding: 8px 16px;
-    color: #e2860f;
+.pizza-amount {
+    width: 2rem;
+    padding: 0.2rem 0.4rem;
+    text-align: center;
+}
 
+.button-item {
+    margin: 0 0.6rem;
+    border-radius: 0.6rem;
+    border: 1px solid $x-light-orange;
+    padding: 0.5rem 1rem;
+    transition: 0.3s;
+}
+
+.theme-button {
     background: none;
+    color: $x-light-orange;
 
     &:hover {
-        color: white;
-        background-color: #fb8d00;
+        background-color: $x-light-orange;
+        color: $x-color-white;
     }
 }
