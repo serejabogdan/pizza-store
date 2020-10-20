@@ -29,7 +29,7 @@ function createNavLinks() {
 export const Menu = () => {
     return (
         <nav className="header__menu">
-            <ul className="header__list list list-theme">
+            <ul className="list list-theme">
                 {createNavLinks()}
             </ul>
         </nav>

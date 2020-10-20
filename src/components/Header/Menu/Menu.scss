@@ -2,6 +2,7 @@ $x-light-orange: #fb8d00;
 $x-color-white: #ffffff;
 
 .list {
+    display: flex;
     list-style-type: none;
     font-size: 1rem;
     line-height: 1.25rem;
@@ -9,10 +10,6 @@ $x-color-white: #ffffff;
 
 .list__item {
     margin: 0 0.7rem;
-}
-
-.header__list {
-    display: flex;
 }
 
 .link-theme {
