@@ -33,17 +33,18 @@ export default class Products extends Component {
         let productName = this.getProductnameFromUrl();
         productName = productsName[productName];
         return productName;
-    };
+    }
 
-    isProductsLength = () => this.state.products.length > 0 && this.state.products.map((product, index) => <Product product={product} key={index} />)
+    // should refactor
+    isProductsLength = () => this.state.products.length > 0 && this.state.products.map((product, index) => <Product product={product} key={index} />);
 
     render() {
         return (
-            <div className="products-list">
-                <div className="product-list__title title">
-                    <h2>{this.productName()}</h2>
+            <div className="Products">
+                <div className="Products__title">
+                    <h2 className="title">{this.productName()}</h2>
                 </div>
-                <div className="products">
+                <div className="products-list">
                     {this.isProductsLength()}
                 </div>
             </div>
