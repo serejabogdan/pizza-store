@@ -1,15 +1,14 @@
-.products-product {
+.Product {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
     flex: 0 1 25%;
-    padding: 20px 2em;
+    padding: 1.2rem 2rem;
 
     margin-bottom: 40px;
-}
 
-.products-product:hover {
-    content: '';  
-    box-shadow: 0 7px 12px rgba(0, 0, 0, 0.2);
+    &:hover {
+        box-shadow: 0 7px 12px rgba(0, 0, 0, 0.2);
+    }
 }
