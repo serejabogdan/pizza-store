@@ -1,19 +1,17 @@
 import React from 'react';
-import './Info.scss'
+import './Info.scss';
 
 export const Info = (props) => {
-    const {imgUrl, name, description} = props.product;
+    const { imgUrl, name, description } = props.product;
     return (
-        <div className="product-info">
-            <div className="product-img">
-                <img src={imgUrl} alt={name} />
+        <div className="Info">
+            <div className="Info__img">
+                <img className="img" src={imgUrl} alt={name} />
             </div>
-            <div className="product-description">
-                <div className="product-description__title title">
-                    <h3>{name}</h3>
-                    <div className="product-description__consists">
-                        <span>{description}</span>
-                    </div>
+            <div className="Info__description description">
+                <h3 className="description__title">{name}</h3>
+                <div className="description__content">
+                    <span className="content">{description}</span>
                 </div>
             </div>
         </div>
