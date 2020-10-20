@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Product } from './Product/Product';
 import { ProductsService } from "../../../services/products.service";
+import { Page } from '../Page/Page';
 
 import './Products.scss';
 
@@ -39,15 +40,10 @@ export default class Products extends Component {
     isProductsLength = () => this.state.products.length > 0 && this.state.products.map((product, index) => <Product product={product} key={index} />);
 
     render() {
+        const title = this.productName();
+        const products = this.isProductsLength();
         return (
-            <div className="Products">
-                <div className="Products__title">
-                    <h2 className="title">{this.productName()}</h2>
-                </div>
-                <div className="products-list">
-                    {this.isProductsLength()}
-                </div>
-            </div>
+            <Page title={title} content={products} />
         );
     }
 }
