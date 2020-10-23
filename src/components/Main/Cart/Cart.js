@@ -13,8 +13,9 @@ const cartContent = (products) =>
 
 const getTotalPrice = (cartProducts) => {
     return (
-        <div className="total">
-            Общая сумма к оплате: {cartProducts.length && cartProducts.reduce((acc, current) => acc + current.price * current.amount, 0)} грн.
+        <div className="total-price">
+            Общая сумма к оплате:&nbsp;
+            {cartProducts.length && cartProducts.reduce((acc, current) => acc + current.price * current.amount, 0)} грн.
         </div>
     );
 };

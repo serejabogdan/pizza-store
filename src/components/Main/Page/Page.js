@@ -12,7 +12,6 @@ export const Page = (props) => {
             <div className="Page__content">
                 { props.content }
             </div>
-
             {
                 cartRender(props.cart)
             }
