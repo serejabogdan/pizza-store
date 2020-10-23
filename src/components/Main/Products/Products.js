@@ -43,7 +43,7 @@ export default class Products extends Component {
         const title = this.productName();
         const products = this.isProductsLength();
         return (
-            <Page title={title} content={products} />
+            <Page cart={{isCart: false}} title={title} content={products} />
         );
     }
 }
