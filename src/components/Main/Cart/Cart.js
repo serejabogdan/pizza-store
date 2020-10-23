@@ -8,24 +8,16 @@ import { Product } from "../Products/Product/Product";
 const cartContent = (products) =>
   products.map((product) => (
     <Product isCart={true} product={product} key={product.name} />
-  )
-);
+  ));
 
-const getTotalPrice = (cartProducts) => {
-    return (
-        <div className="total-price">
-            Общая сумма к оплате:&nbsp;
-            {cartProducts.length && cartProducts.reduce((acc, current) => acc + current.price * current.amount, 0)} грн.
-        </div>
-    );
-};
+const getTotalPrice = (cartProducts) => cartProducts.length ? cartProducts.reduce((acc, current) => acc + current.price * current.amount, 0) : cartProducts.length;
 
 const Cart = (props) => {
   const { cartProducts } = props;
   const content = cartContent(cartProducts);
-  const totalPrice = getTotalPrice(cartProducts)
+  const totalPrice = getTotalPrice(cartProducts);
   return (
-      <Page cart={{isCart: true, totalPrice}} title={"Корзина"} content={content} />
+      <Page cart={{ isCart: true, totalPrice }} title={"Корзина"} content={content} />
   );
 };
 
