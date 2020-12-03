@@ -10,7 +10,7 @@ export default class Products extends Component {
     super();
     this.state = {products: []};
     const productsService = new ProductsService();
-    this.service = productsService.create('test');
+    this.service = productsService.create('fetch');
   }
 
   componentDidMount() {
