@@ -21,8 +21,8 @@ class Select extends React.Component {
 
     isCartButton() {
         return this.props.isCart ?
-            <button type="button" className="btn-delete btn-select" onClick={this.onDeleteProduct}>Удалить</button> :
-            <button type="button" className="btn-select" onClick={this.onAddProduct}>Выбрать</button>;
+            <button type="button" className="button-item theme-button" onClick={this.onDeleteProduct}>Удалить</button> :
+            <button type="button" className="button-item theme-button" onClick={this.onAddProduct}>Выбрать</button>;
     }
 
     amountOfProduct(targetValue) {
@@ -55,20 +55,20 @@ class Select extends React.Component {
 
     render() {
         return (
-            <div className="product-select">
-                <div className="product-select__cost">
-                    <span>
+            <div className="Select">
+                <div className="Select__cost">
+                    <span className="cost">
                         {!this.props.isCart && 'от '}
                         {this.props.product.price} грн.
                     </span>
                 </div>
                 {
                     this.props.isCart &&
-                    <div className="product-select__pizza-amount">
-                        <input type="text" value={this.state.product.amount} onChange={this.onChangeProductAmount} maxLength="2" />
+                    <div className="Select__amount">
+                        <input className="pizza-amount" type="text" value={this.state.product.amount} onChange={this.onChangeProductAmount} maxLength="2" />
                     </div>
                 }
-                <div className="product-select__select-btn">
+                <div className="Select__buttons">
                     {this.isCartButton()}
                 </div>
             </div>

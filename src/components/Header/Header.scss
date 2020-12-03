@@ -1,77 +1,29 @@
-$light-orange: #fb8d00;
-$current: #fff;
+$x-light-orange: #fb8d00;
+$x-color-white: #ffffff;
 
-/* header */
 .header{
-    background-color: $light-orange;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-
-    .header__row {
-        display: flex;
-    
-        justify-content: space-between;
-        align-items: center;
-    }
+    background-color: $x-light-orange;
+    box-shadow: 0 0.1rem 0.5rem rgba(0,0,0,0.1);
 }
 
-.logo-title {
+.header__row {
     display: flex;
+
+    justify-content: space-between;
     align-items: center;
 }
 
-.logo-title img {
-    height: 80px;
-    margin-right: 20px;
+.logo {
+    height: 5rem;
+    margin-right: 1.2rem;
 }
 
-/* menu */
-
-.menu ul {
-    list-style-type: none;
-
-    display: flex;
-    margin: 0;
-
-    & li {
-        margin: 0 10px;
-        border-radius: 0.3em;
-        border: 1px solid $light-orange;
-        transition: 0.3s;
-    }
-
-    & li:hover {
-        border: 1px solid $current;
-    }
-
-    & li a {
-        display: block;
-        font-size: 1em;
-        line-height: 1.25em;
-        color: $current;
-        text-decoration: none;
-        padding: 8px 16px;
-    }
-}
-
-.header__basket button {
-    background-color: $current;
-    border-radius: 0.25em;
-    border: 1px solid $current;
-    transition: 0.3s;
-    color: $light-orange;
-    padding: 8px 16px;
+.cart__link {
+    background-color: $x-color-white;
+    color: $x-light-orange;
     cursor: pointer;
 
     &:hover {
-        box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+        box-shadow: 0 0.1rem 0.7rem rgba(0,0,0,0.15);
     }
 }
-
-.active {
-    background-color: $current;
-    color: $light-orange;
-    border-radius: 0.3em;
-}
-
-/* menu */
-/* header */
